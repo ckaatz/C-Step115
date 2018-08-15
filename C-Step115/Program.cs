@@ -10,13 +10,23 @@ namespace C_Step115
     {
         static void Main(string[] args)
         {
-            MathClass NewClass = new MathClass;
+            MathClass NewClass = new MathClass();
             Console.WriteLine("Pick a number:");
             int UserInput1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("You may enter a second number if you wish:");
-            int UserInput2 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(NewClass.MathOperation(UserInput1, UserInput2));
-            Console.ReadLine();
+            Console.WriteLine("True/False: do you want to pick a second number?");
+            bool SecondNumber = Convert.ToBoolean(Console.ReadLine());
+            if (SecondNumber)
+            {
+                Console.WriteLine("Pick a second number:");
+                int UserInput2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(NewClass.MathOperation(UserInput1, UserInput2));
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine(NewClass.MathOperation(UserInput1));
+                Console.ReadLine();
+            }
         }
     }
 
